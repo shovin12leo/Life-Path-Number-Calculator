@@ -24,15 +24,15 @@ def get_single_digit(number):
 
 def get_image_for_life_path(path_number):
     image_urls = {
-        1: 'https://i.postimg.cc/mZpvdPpg/Screenshot-2023-12-27-20-29-36-120-com-openai-chatgpt-edit.jpg',
-        2: 'https://i.postimg.cc/PrBBjBjG/Screenshot-2023-12-27-20-29-49-889-com-openai-chatgpt-edit.jpg',
-        3: 'https://i.postimg.cc/6QKg7nqY/Screenshot-2023-12-27-20-30-00-694-com-openai-chatgpt-edit.jpg',
-        4: 'https://i.postimg.cc/R0T8whn9/Screenshot-2023-12-27-20-30-13-461-com-openai-chatgpt-edit.jpg',
-        5: 'https://i.postimg.cc/1t5dBSpF/Screenshot-2023-12-27-20-30-26-573-com-openai-chatgpt-edit.jpg',
-        6: 'https://i.postimg.cc/L6qrGmGB/Screenshot-2023-12-27-20-30-41-550-com-openai-chatgpt-edit.jpg',
-        7: 'https://i.postimg.cc/RZK2VXSW/Screenshot-2023-12-27-20-30-54-748-com-openai-chatgpt-edit.jpg',
-        8: 'https://i.postimg.cc/HnrhGtvs/Screenshot-2023-12-27-20-31-09-006-com-openai-chatgpt-edit.jpg',
-        9: 'https://i.postimg.cc/MTPFrLDF/Screenshot-2023-12-27-20-31-22-122-com-openai-chatgpt-edit.jpg'
+        1: 'replace the life path description image here',
+        2: 'replace the life path description image here',
+        3: 'replace the life path description image here',
+        4: 'replace the life path description image here',
+        5: 'replace the life path description image here',
+        6: 'replace the life path description image here',
+        7: 'replace the life path description image here',
+        8: 'replace the life path description image here',
+        9: 'replace the life path description image here'
     }
     return image_urls.get(path_number, 'https://via.placeholder.com/400x300?text=Life+Path+Image')
 
