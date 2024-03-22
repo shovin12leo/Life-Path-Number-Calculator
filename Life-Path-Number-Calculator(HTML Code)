@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Life Path Number Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      max-width: 600px;
+      width: 100%;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      color: #555;
+    }
+
+    input[type="date"] {
+      width: calc(100% - 28px); /* Considering input padding and border */
+      padding: 8px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      margin-bottom: 20px;
+      box-sizing: border-box;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    #result {
+      margin-top: 20px;
+    }
+
+    p {
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    img {
+      max-width: 100%;
+      border-radius: 4px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Life Path Number Calculator</h1>
+    <label for="birthdate">Enter your birthdate:</label>
+    <input type="date" id="birthdate">
+    <button onclick="calculateLifePath()">Calculate</button>
+    <div id="result">
+      <p>Your life path number is: </p>
+      <img src="https://via.placeholder.com/400x300?text=Life+Path+Image" id="pathImage" alt="Life Path Image">
+    </div>
+  </div>
+
+  <script>
+    function calculateLifePath() {
+      const birthdate = document.getElementById('birthdate').value;
+      const date = new Date(birthdate);
+      let sum = 0;
+
+      const day = date.getDate();
+      const month = date.getMonth() + 1;
+      const year = date.getFullYear();
+
+      sum = getSingleDigit(day) + getSingleDigit(month) + getSingleDigit(year);
+
+      while (sum > 9) {
+        sum = getSingleDigit(sum);
+      }
+
+      document.getElementById('result').innerHTML = `
+        <p>Your life path number is: ${sum}</p>
+        <img src="${getImageForLifePath(sum)}" alt="Life Path ${sum} Image">
+      `;
+    }
+
+    function getSingleDigit(number) {
+      let sum = 0;
+      while (number > 0) {
+        sum += number % 10;
+        number = Math.floor(number / 10);
+      }
+      return sum;
+    }
+
+    function getImageForLifePath(pathNumber) {
+      const imageUrls = {
+        1: 'https://i.postimg.cc/mZpvdPpg/Screenshot-2023-12-27-20-29-36-120-com-openai-chatgpt-edit.jpg',
+        2: 'https://i.postimg.cc/PrBBjBjG/Screenshot-2023-12-27-20-29-49-889-com-openai-chatgpt-edit.jpg',
+        3: 'https://i.postimg.cc/6QKg7nqY/Screenshot-2023-12-27-20-30-00-694-com-openai-chatgpt-edit.jpg',
+        4: 'https://i.postimg.cc/R0T8whn9/Screenshot-2023-12-27-20-30-13-461-com-openai-chatgpt-edit.jpg',
+        5: 'https://i.postimg.cc/1t5dBSpF/Screenshot-2023-12-27-20-30-26-573-com-openai-chatgpt-edit.jpg',
+        6: 'https://i.postimg.cc/L6qrGmGB/Screenshot-2023-12-27-20-30-41-550-com-openai-chatgpt-edit.jpg',
+        7: 'https://i.postimg.cc/RZK2VXSW/Screenshot-2023-12-27-20-30-54-748-com-openai-chatgpt-edit.jpg',
+        8: 'https://i.postimg.cc/HnrhGtvs/Screenshot-2023-12-27-20-31-09-006-com-openai-chatgpt-edit.jpg',
+        9: 'https://i.postimg.cc/MTPFrLDF/Screenshot-2023-12-27-20-31-22-122-com-openai-chatgpt-edit.jpg'
+      };
+      return imageUrls[pathNumber];
+    }
+  </script>
+</body>
+
+</html>
